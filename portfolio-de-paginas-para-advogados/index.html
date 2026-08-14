@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuriPages — Portfólio de Páginas para Advogados</title>
+    <link rel="icon" type="image/webp" href="../assets/imagem/faviicon.webp">
+    <meta name="description"
+        content="Criação de sites institucionais e landing pages otimizadas para escritórios de advocacia. +500 projetos jurídicos desenvolvidos. Consultoria gratuita.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .catalog-thumb img {
+            object-position: top !important;
+        }
+
+        .catalog-filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #475569;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .catalog-item {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .catalog-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            position: relative;
+            background: #f8fafc;
+        }
+
+        .catalog-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .catalog-item:hover .catalog-thumb img {
+            transform: scale(1.05);
+        }
+
+        .catalog-info {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(37, 99, 235, 0.05);
+        }
+
+        .catalog-info span {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        .catalog-info svg {
+            width: 20px;
+            height: 20px;
+            color: #3b82f6;
+            transition: transform 0.3s ease;
+        }
+
+        .catalog-item:hover .catalog-info svg {
+            transform: translate(2px, -2px);
+        }
+
+        /* --- Text Marquee --- */
+        .text-marquee-section {
+            width: 100%;
+            background: #2563eb;
+            padding: 12px 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-marquee-wrap {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .text-marquee-track {
+            display: inline-block;
+            animation: textMarqueeScroll 25s linear infinite;
+        }
+
+        .text-marquee-track span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-right: 40px;
+        }
+
+        @keyframes textMarqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Mobile: Promoção Express */
+        @media (max-width: 767px) {
+            .conexoes-container {
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+
+            .connections-mockup-wrapper,
+            .connections-content-wrapper {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+
+            .content-block-1 h2,
+            .content-block-1 p,
+            .content-block-2 h2,
+            .content-block-2 p {
+                text-align: center !important;
+            }
+
+            .content-block-1>div:nth-child(2),
+            .content-block-2>div:nth-child(2) {
+                margin: 0 auto 24px auto !important;
+            }
+
+            .content-block-1 .services-watermark,
+            .content-block-2 .services-watermark {
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="inicio"
+        style="background-image: url('../assets/imagem/backg01.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; padding-top: 200px; padding-bottom: 50px; height: auto; min-height: auto;">
+        
+        <div class="section-header" style="margin-bottom: 24px;">
+            <!-- Imagem de perfil estilo Instagram -->
+            <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+                <div
+                    style="width: 100px; height: 100px; border-radius: 50%; padding: 2px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    <img src="../assets/imagem/logofim.webp" alt="JuriPages Perfil"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #ffffff; background: #ffffff;">
+                </div>
+            </div>
+
+            <div class="services-watermark">portfólio</div>
+
+            <h1 class="section-title" style="font-size: 44.6px;">Explore nosso <em>Portfólio</em> de Projetos Jurídicos</h1>
+            <p class="section-desc">Conheça as páginas de alta conversão criadas para advogados de todo o Brasil.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ LOGO MARQUEE ═══════════════ -->
+    <section class="section-logos"
+        style="position: relative; overflow: hidden; padding-bottom: 20px; padding-top: 40px;">
+        <style>
+            .marquee-item img {
+                /* Lilac color filter (#8b5cf6) */
+                filter: brightness(0) saturate(100%) invert(42%) sepia(87%) saturate(1637%) hue-rotate(227deg) brightness(96%) contrast(97%) !important;
+                opacity: 0.8;
+                transition: opacity 0.3s;
+            }
+            .marquee-item img:hover {
+                opacity: 1;
+            }
+        </style>
+        <div class="container" style="position: relative;">
+            <div class="marquee-wrap" style="margin-top: 0;">
+                <div class="marquee-fade-left"></div>
+                <div class="marquee-fade-right"></div>
+                <div class="marquee-track">
+                    <!-- Logos repeated 2x for seamless loop -->
+                    <div class="marquee-item"><img
+                            src="../assets/imagem/logos/Alvaro-Alfredo_logotipo_horizontal-01-scaled-1-300x100-1.webp"
+                            alt="Alvaro Alfredo Advocacia"></div>
+                    <div class="marquee-item"><img
+                            src="../assets/imagem/logos/Copia_de_5-removebg-preview-2-2-e1745499268558-300x184-copiar.webp"
+                            alt="Advocacia Especializada"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/DIREITO-copiar-3.webp"
+                            alt="Direito de Família"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/IP-MKT-01-1.webp"
+                            alt="Impetus Marketing"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/Logo-Cleyton-Vertical-300x62-2.webp"
+                            alt="Cleyton Advocacia"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/Logotipo-Horizontal-1-1.webp"
+                            alt="Prospera Direito"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/colorido_vertical-png-300x74-1.webp"
+                            alt="Karla Vaz Advocacia"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/logoHorizontal-1.webp" alt="Mega Ads">
+                    </div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/logoHorizontal.webp"
+                            alt="Nascimento & Abbade"></div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="marquee-item"><img
+                            src="../assets/imagem/logos/Alvaro-Alfredo_logotipo_horizontal-01-scaled-1-300x100-1.webp"
+                            alt="Alvaro Alfredo Advocacia"></div>
+                    <div class="marquee-item"><img
+                            src="../assets/imagem/logos/Copia_de_5-removebg-preview-2-2-e1745499268558-300x184-copiar.webp"
+                            alt="Advocacia Especializada"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/DIREITO-copiar-3.webp"
+                            alt="Direito de Família"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/IP-MKT-01-1.webp"
+                            alt="Impetus Marketing"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/Logo-Cleyton-Vertical-300x62-2.webp"
+                            alt="Cleyton Advocacia"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/Logotipo-Horizontal-1-1.webp"
+                            alt="Prospera Direito"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/colorido_vertical-png-300x74-1.webp"
+                            alt="Karla Vaz Advocacia"></div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/logoHorizontal-1.webp" alt="Mega Ads">
+                    </div>
+                    <div class="marquee-item"><img src="../assets/imagem/logos/logoHorizontal.webp"
+                            alt="Nascimento & Abbade"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CATÁLOGO DE PROJETOS ═══════════════ -->
+    <section class="section-light" id="portfolio" style="padding-top: 80px; padding-bottom: 48px;">
+        <div class="container" style="width: 80%; max-width: 1440px; margin: 0 auto;">
+            <div class="section-header reveal">
+                <div class="services-watermark">portfólio</div>
+                <span class="section-tag">Portfólio</span>
+                <h2 class="section-title">Explore nossos <em>projetos recentes</em></h2>
+            </div>
+
+            <!-- Botões de Filtro -->
+            <style>
+                .filter-btn {
+                    padding: 10px 24px;
+                    border-radius: 30px;
+                    border: 1px solid #ddd;
+                    background: #fff;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    font-weight: 600;
+                    color: #64748b;
+                }
+
+                .filter-btn.active,
+                .filter-btn:hover {
+                    background: #8b5cf6;
+                    color: #fff;
+                    border-color: #8b5cf6;
+                }
+
+                .catalog-item.hidden {
+                    display: none !important;
+                }
+
+                @media (min-width: 992px) {
+                    .catalog-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        gap: 24px;
+                    }
+                }
+            </style>
+            <div class="portfolio-filters reveal"
+                style="display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap;">
+                <button class="filter-btn active" data-filter="all">Todas recentes</button>
+                <button class="filter-btn" data-filter="landing-page">Landing Pages</button>
+                <button class="filter-btn" data-filter="institucional">Site Institucional</button>
+                <button class="filter-btn" data-filter="links">Página de Links</button>
+            </div>
+
+            <div class="catalog-grid reveal" id="catalog-grid">
+                <!-- ================= Landing Pages ================= -->
+                <a href="https://am-lia-saraiva-advogadas.vercel.app/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/Amélia Saraiva.webp" alt="Amélia Saraiva" loading="lazy"></div>
+                    <div class="catalog-info"><span>Amélia Saraiva</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://adv.ishiiadvogados.com/advogado-trabalhista-empresarial/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/screencapture-adv-ishiiadvogados-advogado-trabalhista-empresarial-2026-07-31-15_40_59.webp" alt="Ishii Advogados" loading="lazy"></div>
+                    <div class="catalog-info"><span>Ishii Advogados</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://escritorioeulaliooliveira.com.br/advogado-bancario/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/screencapture-escritorioeulaliooliveira-br-advogado-bancario-2026-07-31-15_40_05.webp" alt="Eulálio Oliveira" loading="lazy"></div>
+                    <div class="catalog-info"><span>Eulálio Oliveira</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://sbadvocaciaespecializada.com.br/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/sbsite.webp" alt="SB Advocacia Especializada" loading="lazy"></div>
+                    <div class="catalog-info"><span>SB Advocacia</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://adv.ingrhidhideassisadvocacia.com.br/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/iasite.webp" alt="Ingrhid de Assis Advocacia" loading="lazy"></div>
+                    <div class="catalog-info"><span>Ingrhid de Assis</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://adv.fortunaebacelar.com.br/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/fbsite.webp" alt="Fortuna & Bacelar" loading="lazy"></div>
+                    <div class="catalog-info"><span>Fortuna & Bacelar</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="https://romanziniepinto.com/" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/rpsite.webp" alt="Romanzini & Pinto" loading="lazy"></div>
+                    <div class="catalog-info"><span>Romanzini & Pinto</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/bpsite.webp" alt="Direito de Família" loading="lazy"></div>
+                    <div class="catalog-info"><span>Direito de Família</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="catalog-item" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/hmsite.webp" alt="Hipólito & Mourão" loading="lazy"></div>
+                    <div class="catalog-info"><span>Hipólito & Mourão</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-rowaize-br-curso-estetica-2025-05-13-08_32_05-1-scaled-1.webp" alt="Curso de Estética" loading="lazy"></div>
+                    <div class="catalog-info"><span>Curso de Estética</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-rowaize-br-ebook-guia-do-advogado-que-vende-2025-04-12-22_00_49-scaled-1.webp" alt="E-book Advogado" loading="lazy"></div>
+                    <div class="catalog-info"><span>E-book Advogado</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-lialeads-br-landingpage02-2025-09-06-23_22_56.webp" alt="Lia Leads" loading="lazy"></div>
+                    <div class="catalog-info"><span>Lia Leads</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-lp-goldenclass-br-profissional-em-estetica-automotiva-2025-09-02-08_44_17.webp" alt="Golden Class" loading="lazy"></div>
+                    <div class="catalog-info"><span>Golden Class</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-cleytonbaeve-br-cleyton-baeve-auxilio-acidente-2025-08-27-12_35_36.webp" alt="Cleyton Baeve" loading="lazy"></div>
+                    <div class="catalog-info"><span>Cleyton Baeve</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-mgaads-trabalhe-conosco-2025-07-05-19_01_05-scaled-1.webp" alt="MGA Ads" loading="lazy"></div>
+                    <div class="catalog-info"><span>MGA Ads</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-rcoelhoadvocacia-direito-consumidor-2025-05-05-01_27_38-scaled-1.webp" alt="R Coelho Advocacia" loading="lazy"></div>
+                    <div class="catalog-info"><span>R Coelho</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="landing-page">
+                    <div class="catalog-thumb"><img src="../assets/imagem/páginas/screencapture-alvaroalfredoadvogados-direito-do-consumidor-2025-09-02-08_25_34.png" alt="Alvaro Alfredo" loading="lazy"></div>
+                    <div class="catalog-info"><span>Alvaro Alfredo</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                </a>
+
+                <!-- ================= Institucional ================= -->
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/MDL-familia-e-sucessoes-scaled-1.webp"
+                            alt="Família e Sucessões" loading="lazy"></div>
+                    <div class="catalog-info"><span>Família e Sucessões</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/Modelo-05-Matheus-lEAO-scaled-1.webp"
+                            alt="Matheus Leão" loading="lazy"></div>
+                    <div class="catalog-info"><span>Matheus Leão</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/mdl-previdenciario-scaled-1-658x1536.webp"
+                            alt="Previdenciário" loading="lazy"></div>
+                    <div class="catalog-info"><span>Previdenciário</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-alessandreramosadvogados-br-direito-aereo-2024-07-11-02_52_39.webp"
+                            alt="Alessandro Ramos" loading="lazy"></div>
+                    <div class="catalog-info"><span>Alessandro Ramos</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-dicarlo-adv-br-advocacia-geral-di-carlo-2025-05-05-01_25_41-scaled-1.webp"
+                            alt="Di Carlo Adv" loading="lazy"></div>
+                    <div class="catalog-info"><span>Di Carlo Adv</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;"
+                    data-category="institucional">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-mariamarianaadvocacia-br-direito-criminal-2024-07-11-02_54_28.webp"
+                            alt="Maria Mariana" loading="lazy"></div>
+                    <div class="catalog-info"><span>Maria Mariana</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+
+                <!-- ================= Links ================= -->
+                <a class="catalog-item" style="cursor: default;" data-category="links">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-andrezadallago-juridev-br-elementor-637-2025-09-18-11_05_40.webp"
+                            alt="Andreza Dallago" loading="lazy"></div>
+                    <div class="catalog-info"><span>Andreza Dallago</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="links">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-felipedsgn-br-elementor-3062-2025-05-04-16_11_52-scaled-1.webp"
+                            alt="Felipe Design" loading="lazy"></div>
+                    <div class="catalog-info"><span>Felipe Design</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+                <a class="catalog-item" style="cursor: default;" data-category="links">
+                    <div class="catalog-thumb"><img
+                            src="../assets/imagem/páginas/screencapture-rowaize-br-wp-admin-post-php-2025-04-09-12_13_49-scaled-1.webp"
+                            alt="Links Advogado" loading="lazy"></div>
+                    <div class="catalog-info"><span>Links Advogado</span><svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg></div>
+                </a>
+
+            </div>
+
+            <!-- Botão Ver Mais / Ver Menos -->
+            <div id="ver-mais-container"
+                style="text-align: center; margin-top: 32px; display: none; gap: 16px; justify-content: center;">
+                <button id="btn-ver-mais"
+                    style="padding: 0; border: none; background: transparent; color: #8b5cf6; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;">
+                    Ver mais projetos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </button>
+                <button id="btn-ver-menos"
+                    style="padding: 0; border: none; background: transparent; color: #8b5cf6; font-weight: bold; cursor: pointer; transition: 0.3s; display: none; align-items: center; gap: 8px;">
+                    Ver menos projetos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m18 15-6-6-6 6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ QUEM SOMOS ═══════════════ -->
+    <section class="section-light" id="sobre" style="padding-top: 80px; padding-bottom: 80px;">
+        <style>
+            .sobre-wrapper {
+                width: 100%;
+                text-align: left;
+            }
+            .sobre-wrapper .section-header {
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+            .sobre-wrapper .services-watermark {
+                left: 0 !important;
+                transform: translateY(-50%) !important;
+            }
+            .sobre-wrapper .section-tag,
+            .sobre-wrapper .section-desc {
+                margin-left: 0 !important;
+            }
+            @media (min-width: 992px) {
+                .sobre-wrapper {
+                    width: 50%;
+                }
+            }
+        </style>
+        <div class="container" style="width: 80%; max-width: 1440px; margin: 0 auto;">
+            <div class="sobre-wrapper">
+                <div class="section-header reveal">
+                    <div class="services-watermark" style="font-size: clamp(60px, 12vw, 150px);">sobre nós</div>
+                    <span class="section-tag">Quem Somos</span>
+                    <h2 class="section-title">Muito prazer, somos a <em>JuriPages</em></h2>
+                    <p class="section-desc">Especialistas em design e desenvolvimento web para o mercado jurídico.</p>
+                </div>
+                <div class="about-content reveal">
+                    <p style="font-size: 18px; color: #475569; line-height: 1.8; margin-bottom: 24px;">
+                        Com anos de experiência criando soluções digitais focadas em conversão, a JuriPages nasceu para
+                        ajudar escritórios de advocacia a se destacarem na internet com profissionalismo e alta performance.
+                    </p>
+                    <p style="font-size: 18px; color: #475569; line-height: 1.8;">
+                        Nosso portfólio de páginas reflete o compromisso com um design de excelência, carregamento rápido e
+                        estruturas testadas que realmente trazem resultados na captação de clientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CONTATO ═══════════════ -->
+    <section class="section-white" id="contato">
+        <div class="container"
+            style="width: 80%; max-width: 1440px; margin: 0 auto; padding-left: 40px; padding-right: 40px;">
+
+            <div class="contact-grid" data-stagger>
+                <!-- Destaque Card 1 -->
+                <a href="../sites-e-landing-pages-para-advogados"
+                    style="grid-column: 1 / -1; text-decoration: none; display: block;">
+                    <img src="../assets/imagem/Card01.webp" alt="Destaque 1" class="destaque-card"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 0px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                </a>
+
+                <!-- Destaque Card 2 -->
+                <a href="https://wa.me/559184921464?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações"
+                    target="_blank" rel="noopener noreferrer"
+                    style="grid-column: 1 / -1; text-decoration: none; display: block;">
+                    <img src="../assets/imagem/Card02.webp" alt="Destaque 2" class="destaque-card"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 0px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                </a>
+
+
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/559184921464?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações"
+                    target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-whatsapp">
+                    <div class="contact-icon violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                        </svg>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p class="contact-sub">Resposta rápida e direta</p>
+                    <span class="contact-link">Falar agora</span>
+                </a>
+                <!-- E-mail -->
+                <a href="mailto:contato@juripages.com.br" class="contact-card" id="contact-email">
+                    <div class="contact-icon violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </div>
+                    <h4>E-mail</h4>
+                    <p class="contact-sub">contato@juripages.com.br</p>
+                    <span class="contact-link">Enviar e-mail</span>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/juripages/" target="_blank" rel="noopener noreferrer"
+                    class="contact-card" id="contact-instagram">
+                    <div class="contact-icon violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </div>
+                    <h4>Instagram</h4>
+                    <p class="contact-sub" style="text-decoration: underline;">@juripages</p>
+                    <span class="contact-link">Seguir perfil</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer"
+        style="background-color: #f5f3ff; padding: 16px 0; min-height: auto; border-top: 1px solid; border-image: linear-gradient(to right, transparent, #a78bfa, transparent) 1;">
+        <div class="footer-inner" style="position: relative; z-index: 2; padding: 0;">
+            <div class="footer-bottom"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; border-top: none; padding-top: 0; width: 100%;">
+                <div class="footer-logo">
+                    <img src="../assets/imagem/juripages.webp" alt="JuriPages"
+                        style="max-height: 40px; width: auto; filter: none;">
+                </div>
+                <p class="footer-copy" style="margin: 0; text-align: right; color: #8b5cf6;">© 2026 JuriPages - Sites
+                    para Advogados. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../assets/Javascript/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const catalogItems = document.querySelectorAll('.catalog-item');
+            const btnVerMais = document.getElementById('btn-ver-mais');
+            const btnVerMenos = document.getElementById('btn-ver-menos');
+            const verMaisContainer = document.getElementById('ver-mais-container');
+            const itemsPerPage = 9;
+
+            let currentFilter = 'all';
+
+            function updateGrid() {
+                let visibleCount = 0;
+                let hiddenCount = 0;
+
+                catalogItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (currentFilter === 'all' || category === currentFilter) {
+                        visibleCount++;
+                        if (visibleCount <= itemsPerPage) {
+                            item.classList.remove('hidden');
+                            item.style.display = 'block';
+                            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
+                        } else {
+                            item.classList.add('hidden');
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            item.style.display = 'none';
+                            hiddenCount++;
+                        }
+                    } else {
+                        item.classList.remove('hidden');
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (verMaisContainer) {
+                    if (hiddenCount > 0) {
+                        verMaisContainer.style.display = 'flex';
+                        if (btnVerMais) btnVerMais.style.display = 'inline-flex';
+                        if (btnVerMenos) btnVerMenos.style.display = 'none';
+                    } else {
+                        if (visibleCount > itemsPerPage) {
+                            verMaisContainer.style.display = 'flex';
+                            if (btnVerMais) btnVerMais.style.display = 'none';
+                            if (btnVerMenos) btnVerMenos.style.display = 'inline-flex';
+                        } else {
+                            verMaisContainer.style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            if (filterBtns.length > 0 && catalogItems.length > 0) {
+                updateGrid();
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentFilter = btn.getAttribute('data-filter');
+                        updateGrid();
+                    });
+                });
+
+                if (btnVerMais && btnVerMenos) {
+                    btnVerMais.addEventListener('click', () => {
+                        catalogItems.forEach(item => {
+                            const category = item.getAttribute('data-category');
+                            if ((currentFilter === 'all' || category === currentFilter) && item.classList.contains('hidden')) {
+                                item.classList.remove('hidden');
+                                item.style.display = 'block';
+                                setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
+                            }
+                        });
+                        btnVerMais.style.display = 'none';
+                        btnVerMenos.style.display = 'inline-flex';
+                    });
+
+                    btnVerMenos.addEventListener('click', () => {
+                        updateGrid();
+                        const portfolioSection = document.getElementById('portfolio');
+                        if (portfolioSection) {
+                            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -158,8 +158,34 @@
                 transform: translateX(-50%);
             }
         }
-        /* Mobile: Promoção Express */
+        /* Mobile: Promoção Express e Ajustes Globais */
         @media (max-width: 767px) {
+            .container {
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .section-connections,
+            .section-light, 
+            .section-white, 
+            .section-data-strategy,
+            .section-logos {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            .hero {
+                padding-top: 100px !important;
+                padding-bottom: 40px !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            .hero .section-title {
+                font-size: 32px !important;
+            }
+
             .conexoes-container {
                 flex-direction: column !important;
                 gap: 24px !important;
@@ -168,6 +194,17 @@
                 flex: 0 0 100% !important;
                 max-width: 100% !important;
                 text-align: center !important;
+            }
+            .connections-content-wrapper {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 64px !important;
+            }
+            .content-block-1, .content-block-2 {
+                grid-area: auto !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             .content-block-1 h2, .content-block-1 p, .content-block-2 h2, .content-block-2 p {
                 text-align: center !important;

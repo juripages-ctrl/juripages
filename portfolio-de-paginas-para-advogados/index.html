@@ -160,8 +160,32 @@
             }
         }
 
-        /* Mobile: Promoção Express */
+        /* Mobile: Promoção Express e Ajustes Globais */
         @media (max-width: 767px) {
+            .container {
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .section-light, 
+            .section-white, 
+            .section-logos {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            .hero {
+                padding-top: 100px !important;
+                padding-bottom: 40px !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            .hero .section-title {
+                font-size: 32px !important;
+            }
+
             .conexoes-container {
                 flex-direction: column !important;
                 gap: 24px !important;
@@ -588,7 +612,7 @@
     <!-- ═══════════════ CONTATO ═══════════════ -->
     <section class="section-white" id="contato">
         <div class="container"
-            style="width: 80%; max-width: 1440px; margin: 0 auto; padding-left: 40px; padding-right: 40px;">
+            style="width: 80%; max-width: 1440px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
 
             <div class="contact-grid" data-stagger>
                 <!-- Destaque Card 1 -->
@@ -598,15 +622,20 @@
                         style="width: 100%; border-radius: 16px; margin-bottom: 0px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                 </a>
 
-                <!-- Destaque Card 2 -->
+                <!-- Destaque Card 3 (Agora em 2º lugar) -->
+                <a href="../portfolio-de-paginas-para-advogados"
+                    style="grid-column: 1 / -1; text-decoration: none; display: block;">
+                    <img src="../assets/imagem/Card3.webp" alt="Destaque 3" class="destaque-card"
+                        style="width: 100%; border-radius: 16px; margin-bottom: 0px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                </a>
+
+                <!-- Destaque Card 2 (Agora em 3º lugar) -->
                 <a href="https://wa.me/559184921464?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações"
                     target="_blank" rel="noopener noreferrer"
                     style="grid-column: 1 / -1; text-decoration: none; display: block;">
                     <img src="../assets/imagem/Card02.webp" alt="Destaque 2" class="destaque-card"
                         style="width: 100%; border-radius: 16px; margin-bottom: 0px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
                 </a>
-
-
 
                 <!-- WhatsApp -->
                 <a href="https://wa.me/559184921464?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações"
